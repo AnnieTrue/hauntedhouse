@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>Dark Side Produtions</title>
+<style>
+
+body{
+	background-image:url("horror.png");
+/*	background-size: cover;*/
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}	
+	
+.header{
+	overflow:hidden;
+	background-color: black; 
+	height: 20%;     
+	padding-top: 0px;
+	color: white;
+}
+	
+
+.header a {
+/*  	float: left;*/
+/*	align-items: center;*/
+  	padding: 0px 0px 0px 0px;
+    width: 20%;
+}
+
+.inactive{
+	justify-content: space-around;		
+}
+	
+	
+.header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+	
+
+.active {
+	float: left;
+  background-color: black;
+  color: white;
+}
+
+.header .icon {
+  display: none;
+}
+	
+.header a:not(:first-child) {
+	margin-left: 14.7%;
+}
+	
+@media screen and (max-width: 600px) {
+  .header a:not(:first-child) {
+	  display: none;
+	  width: 150%;
+	  margin-left:0;
+	}
+  .header a.icon {
+    float: right;
+    display: block;
+	color:#EAE411;
+	  width:5%;
+  }
+}
+	
+@media screen and (max-width: 600px) {
+  .header.responsive {position: relative;}
+  .header.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.item2 { grid-area: main;  height: 100%;}
+.item3 { grid-area: sidebar;  height: 100%;}
+
+	.red{
+		color: #A60709;
+		font-size: 2vw;
+	}
+	.yellow{
+		color: #EAE411;
+		font-size: 2vw;
+	}
+	.white{
+		color: white;
+		font-size: 2vw;
+	}
+	.size{
+		font-size: 5vw;
+	}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main main main main main main';
+  grid-gap: 10px;
+	margin-top: 10px;
+  color: white;
+  padding: 0px;
+	height: 100%;
+	width: 100%;
+
+}
+.grid-container > div {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body bgcolor="dimgray">	
+<div class="header" id="menu">
+	
+	<a class="active" href="index.html"><img src="DarkSideAnimation.gif" width="100%" alt="DarkSideProductions" color="red" onmouseover="this.src='DarkSideAnimation.gif';"></a>
+	
+	<a class="inactive" href="tickets.html"><img src="tickets.svg" width="4%" alt="tickets" color="yellow" onmouseover="this.src='tickets2.svg';" onmouseout="this.src='tickets.svg';"></a>
+	
+	<a class="inactive" href="directions.html"><img src="directions.svg" width="3%" alt="directions" color="yellow" onmouseover="this.src='directions2.svg';" onmouseout="this.src='directions.svg';"></a>
+	
+	<a class="inactive" href="schedule.html"><img src="schedule.svg" width="3%" alt="schedule" color="yellow" onmouseover="this.src='schedule2.svg';" onmouseout="this.src='schedule.svg';"></a>
+	
+	<a class="inactive" href="reviews.html"><img src="reviews.svg" width="4%" alt="reviews" color="yellow" onmouseover="this.src='reviews2.svg';" onmouseout="this.src='reviews.svg';"></a>
+	
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  	</a>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("menu");
+    if (x.className === "header") {
+        x.className += " responsive";
+    } else {
+        x.className = "header";
+    }
+}
+</script>
+	
+	
+<div class="grid-container">
+  	<div class="item2">
+		<h1 class="size">Reviews</h1>
+		<b class="red">BEST HAUNT ON LONG ISLAND...</b><br>
+		<a class="red">No question this Haunt was AWESOME... They put the Scare in Scary... It did not matter if you were in the Front, Back, or Middle... There is no hiding within your group... Just Amazing... Been to just about all the Haunted Houses on Long Island and this was clearly the "BEST". I do not normally write reviews, but they impressed me so much, I just had to take the time to share... You will not be disappointed...</a>
+		<br><br><b class="yellow">Amazing</b><br>
+		<a class="yellow">I have been to many haunted houses, and like trying out new ones every year. When we found this website we were a bit skeptical because it was only 2 attractions. We decided to try it out anyway and we were NOT disappointed!! We went with a group of 6 and we alll got scared multiple times!! The actors did a great job at getting screams out of us!! The owners were extremely friendly also! They did a great job, def happy that we decided to take the drive to Darkside. Love love loved it!!</a>
+		<br><br><b class="white">All-Time Favorite</b><br>
+		<a class="white">I've been going here with my family for years and i was always too scared to actually go in until a few of years ago. for the past 4 or 5 years, I've been making time to visit this haunted house every year and every time I'm more and more terrified and impressed. i was most impressed this year. the actors are great, the makeup is awesome, the effects they use are perfect! you experience moments where you don't know where your going or whats lurking around you or in front of you, for instance just pushing through layers of black sheets that feel almost endless (the suspense killed me). theres so many different types of scenes you go through and each one was perfectly decorated. it seemed more natural than other haunts such as bayville scream park, that just slather a bunch of props into a room and stick a random actor in there. dark side has a more professional and effective way of making you feel like you're really trapped and almost as if the scenes you are walking through are coming to life. its so scary. it was the only haunted house that got my boyfriend to say he was truly scared, even after we had gone to Terror Behind the Walls at Eastern State Pennitentiary, Gateway's Haunted Playhouse and Shmitts farm's haunts. This was my favorite and I'm so glad i went again this year. GREAT JOB and thank you to everybody who works on this haunt, the actors, makeup, props and everything are absolutely perfect!!</a>
+		<br><br><b class="red">Amazing and very Scary Haunted House</b><br>
+		<a class="red">Wow took 6 12yr. old girls the house was scary every turn and corner someone was there. Each room was scarier and the actors,and props, were so real even scared me a few times. Well done we are all still talking about it. It also was worth the money love the setting very spooky and it took a while to go through we screamed for at least 25mins. We can't wait to go again next year. Best House on Long Island you have to check it out!!!!!</a>
+		<br><br><b class="yellow">Scariest on Long Island</b><br>
+		<a class="yellow">Best haunted house in Long Island... or in New York for that matter. Been going there for years! Just visited the Darkside on opening weekend, and they were fully staffed and had the BEST scares yet. The changes they made were incredible this year. cant wait to go back!</a>
+	</div>  
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>Dark Side Produtions</title>
+<style>
+
+body{
+	background-image:url("horror.png");
+/*	background-size: cover;*/
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}	
+	
+.header{
+	overflow:hidden;
+	background-color: black;
+}
+	
+
+.header a {
+/*  	float: left;*/
+/*	align-items: center;*/
+  	padding: 0px 0px 0px 0px;
+    width: 20%;
+}
+
+.inactive{
+	justify-content: space-around;		
+}
+	
+	
+.header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+	
+
+.active {
+	float: left;
+  background-color: black;
+  color: white;
+}
+
+.header .icon {
+  display: none;
+}
+	
+.header a:not(:first-child) {
+	margin-left: 14.7%;
+}
+	
+@media screen and (max-width: 600px) {
+  .header a:not(:first-child) {
+	  display: none;
+	  width: 150%;
+	  margin-left:0;
+	}
+  .header a.icon {
+    float: right;
+    display: block;
+	color:#EAE411;
+	  width:5%;
+  }
+}
+	
+@media screen and (max-width: 600px) {
+  .header.responsive {position: relative;}
+  .header.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.item2 { grid-area: main;  height: 100%;}
+.item3 { grid-area: sidebar; opacity: 1; height: 100%;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main main main main main sidebar';
+  grid-gap: 10px;
+	margin-top: 10px;
+  color: white;
+  padding: 0px;
+	height: 100%;
+	width: 100%;
+
+}
+.grid-container > div {
+  text-align: center;
+  font-size:2vw;
+
+}
+	
+	.item3 h3{
+		color: white;
+	}
+	.red{
+		color: #A60709;
+	}
+	.yellow{
+		color: #EAE411;
+	}
+	.white{
+		color: white;
+	}
+
+/*calendar*/
+#calendar {
+    width: 100%;    
+}
+
+#calendar a {
+    color: green;
+    text-decoration: none;
+}
+
+#calendar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#calendar li {
+    display: block;
+    float: left;
+    width:14.342%;
+    padding: 5px;
+    box-sizing:border-box;
+    border: 1px  #ccc;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+#calendar ul.weekdays {
+    height: 40px;
+    background: black;
+}
+
+#calendar ul.weekdays li {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 20px;
+    border: none !important;
+    padding: 10px 6px;
+    color: #fff;
+    font-size: 13px;
+}
+
+#calendar .days li {
+    height: 100px;
+}
+
+#calendar .date {
+    text-align: center;
+	font-weight: bold;
+	line-height: 400%;
+    color: #fff;
+    width: 100%;
+	height: 100%;
+    float: right;
+}
+#calendar .dateRed {
+    text-align: center;
+	font-weight: bold;
+	line-height: 400%;
+	opacity: .5;
+    color: black;
+    width: 100%;
+	height: 100%;
+    float: right;
+	background: #A60709;
+}
+#calendar .dateWhite {
+    text-align: center;
+	font-weight: bold;
+	line-height: 400%;
+	opacity: .5;
+    color: black;
+    width: 100%;
+	height: 100%;
+    float: right;
+	background: white;
+}
+#calendar .dateYellow {
+    text-align: center;
+	font-weight: bold;
+	line-height: 400%;
+	opacity: .5;
+    color: black;
+    width: 100%;
+	height: 100%;
+    float: right;
+	background: #EAE411;
+}
+
+#calendar .other-month {
+    color: #666;
+}
+
+/* ============================
+                Mobile Responsiveness
+   ============================*/
+
+
+@media(max-width: 600px) {
+
+    #calendar .weekdays, #calendar .other-month {
+        display: none;
+    }
+
+    #calendar li {
+        height: auto !important;
+        border: 1px solid #ededed;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: -1px;
+    }
+
+    #calendar .date {
+        float: none;
+    }
+}
+/*	calendar*/
+	
+
+
+
+	
+</style>
+</head>
+<body onload="startTime()">	
+<div class="header" id="menu">
+	
+	<a class="active" href="index.html"><img src="DarkSideAnimation.gif" width="100%" alt="DarkSideProductions" color="red" onmouseover="this.src='DarkSideAnimation.gif';"></a>
+	
+	<a class="inactive" href="tickets.html"><img src="tickets.svg" width="4%" alt="tickets" color="yellow" onmouseover="this.src='tickets2.svg';" onmouseout="this.src='tickets.svg';"></a>
+	
+	<a class="inactive" href="directions.html"><img src="directions.svg" width="3%" alt="directions" color="yellow" onmouseover="this.src='directions2.svg';" onmouseout="this.src='directions.svg';"></a>
+	
+	<a class="inactive" href="schedule.html"><img src="schedule.svg" width="3%" alt="schedule" color="yellow" onmouseover="this.src='schedule2.svg';" onmouseout="this.src='schedule.svg';"></a>
+	
+	<a class="inactive" href="reviews.html"><img src="reviews.svg" width="4%" alt="reviews" color="yellow" onmouseover="this.src='reviews2.svg';" onmouseout="this.src='reviews.svg';"></a>
+	
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  	</a>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("menu");
+    if (x.className === "header") {
+        x.className += " responsive";
+    } else {
+        x.className = "header";
+    }
+}
+</script>
+	
+	
+<div class="grid-container">
+  	<div class="item2">
+		
+<!--calendar-->
+		
+		<div id="calendar-wrap">
+            <header>
+                <h1>October 2018</h1>
+            </header>
+            <div id="calendar">
+                <ul class="weekdays">
+                    <li>Sunday</li>
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                    <li>Saturday</li>
+                </ul>
+
+                <!-- Days from previous month -->
+
+                <ul class="days">
+                    <li class="day other-month"></li>
+
+                    <!-- Days in current month -->
+
+                    <li class="day">
+                        <div class="date">1</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">2</div>                     
+                    </li>
+                </ul>
+
+                    <!-- Row #2 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">3</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">4</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">5</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">6</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="dateWhite">7</div>                     
+                    </li>
+                    <li class="day">
+                        <div class="date">8</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">9</div>                       
+                    </li>
+                </ul>
+
+                    <!-- Row #3 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">10</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">11</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">12</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">13</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateWhite">14</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">15</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">16</div>                      
+                    </li>
+                </ul>
+
+                    <!-- Row #4 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="dateYellow">17</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">18</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">19</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">20</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateWhite">21</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">22</div>                     
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">23</div>                      
+                    </li>
+                </ul>
+
+                        <!-- Row #5 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="dateYellow">24</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">25</div>                     
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">26</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateRed">27</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateWhite">28</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">29</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="dateYellow">30</div>                      
+                    </li>
+                </ul>
+
+                <!-- Row #6 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="dateYellow">31</div>                      
+                    </li>
+                    <li class="day other-month"></li>
+                    <li class="day other-month"></li>
+                    <li class="day other-month"></li>
+                </ul>
+
+            </div><!-- /. calendar -->
+        </div><!-- /. wrap -->
+		
+		
+		
+<!--calendar-->
+		
+	</div> 
+	
+
+
+	
+	
+ <div class="item3">
+  	  <h3><br><br><br>Hours of<br>Operation:</h3>
+		<lu class="red">6:00pm - 12:00am</lu>
+	 <br><br>
+		<lu class="yellow">7:00pm - 11:00pm</lu>
+	 <br><br>
+		<lu class="white">6:00pm - 10:00pm</lu>
+  	</div>
+</div>
+
+</body>
+</html>
+

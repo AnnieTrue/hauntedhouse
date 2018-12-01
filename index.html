@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>Dark Side Produtions</title>
+<style>
+
+body{
+	background-image:url("horror.png");
+	/*background-size: cover;*/
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}	
+	
+.header{
+	overflow:hidden;
+	background-color: black; 
+	height: 20%;     
+	padding-top: 0px;
+	color: white;
+}
+	
+
+.header a {
+/*  	float: left;*/
+/*	align-items: center;*/
+  	padding: 0px 0px 0px 0px;
+    width: 20%;
+}
+
+.inactive{
+	justify-content: space-around;		
+}
+	
+	
+.header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+	
+
+.active {
+	float: left;
+  background-color: black;
+  color: white;
+}
+
+.header .icon {
+  display: none;
+}
+	
+.header a:not(:first-child) {
+	margin-left: 14.7%;
+}
+	
+@media screen and (max-width: 600px) {
+  .header a:not(:first-child) {
+	  display: none;
+	  width: 150%;
+	  margin-left:0;
+	}
+  .header a.icon {
+    float: right;
+    display: block;
+	color:#EAE411;
+	  width:5%;
+  }
+}
+	
+@media screen and (max-width: 600px) {
+  .header.responsive {position: relative;}
+  .header.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.item2 { grid-area: main;  height: 100%;}
+.item3 { grid-area: sidebar;  height: 100%;}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main main main main main main';
+  grid-gap: 10px;
+	margin-top: 10px;
+  color: white;
+  padding: 0px;
+	height: 100%;
+	width: 100%;
+
+}
+.grid-container > div {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body bgcolor="dimgray">	
+<div class="header" id="menu">
+	
+	<a class="active" href="index.html"><img src="DarkSideAnimation.gif" width="100%" alt="DarkSideProductions" color="red" onmouseover="this.src='DarkSideAnimation.gif';"></a>
+	
+	<a class="inactive" href="tickets.html"><img src="tickets.svg" width="4%" alt="tickets" color="yellow" onmouseover="this.src='tickets2.svg';" onmouseout="this.src='tickets.svg';"></a>
+	
+	<a class="inactive" href="directions.html"><img src="directions.svg" width="3%" alt="directions" color="yellow" onmouseover="this.src='directions2.svg';" onmouseout="this.src='directions.svg';"></a>
+	
+	<a class="inactive" href="schedule.html"><img src="schedule.svg" width="3%" alt="schedule" color="yellow" onmouseover="this.src='schedule2.svg';" onmouseout="this.src='schedule.svg';"></a>
+	
+	<a class="inactive" href="reviews.html"><img src="reviews.svg" width="4%" alt="reviews" color="yellow" onmouseover="this.src='reviews2.svg';" onmouseout="this.src='reviews.svg';"></a>
+	
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  	</a>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("menu");
+    if (x.className === "header") {
+        x.className += " responsive";
+    } else {
+        x.className = "header";
+    }
+}
+</script>
+	
+	
+<div class="grid-container">
+  	<div class="item2">
+  		<br><br><br><br>&emsp;&emsp;&emsp;
+		<img src="tagline.png" width="50%">
+	</div>  
+</div>
+
+</body>
+</html>
+
