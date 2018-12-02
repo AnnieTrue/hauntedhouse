@@ -258,7 +258,7 @@ function myFunction() {
   <p>
 <div class="number-input">
   <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); calc();"></button>
-  <input id="num" class="quantity" min="0" name="quantity" value="1" type="number">
+  <input id="num" class="quantity" min="0" name="quantity" value=<%quantity%> type="number">
   <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); calc();" class="plus"></button>
 </div>
    </p>
